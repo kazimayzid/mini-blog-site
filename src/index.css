@@ -2,3 +2,20 @@
 @import "flowbite/src/themes/default";
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
+
+
+/* Scrollbar track */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* Scrollbar track background */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
