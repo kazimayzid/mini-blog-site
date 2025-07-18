@@ -95,7 +95,7 @@ export const Home = () => {
           <div className=" h-[90%] w-[20%] text-center">
             <div className="flex flex-col mb-10">
               <label
-                className="font-bold text-[36px] text-white"
+                className="font-bold text-[36px] text-[rgba(255,255,255,0.6)]"
                 htmlFor="title"
               >
                 Title
@@ -103,7 +103,7 @@ export const Home = () => {
               <input
                 onChange={titleHandle}
                 value={title}
-                className="rounded-[6px] bg-[#ffffff15] text-white"
+                className="rounded-[6px] bg-[#ffffff15] text-[rgba(255,255,255,0.6)]"
                 id="title"
                 type="text"
               />
@@ -111,7 +111,7 @@ export const Home = () => {
             </div>
             <div className="flex flex-col h-[50%]">
               <label
-                className="font-bold text-[36px] text-white"
+                className="font-bold text-[36px] text-[rgba(255,255,255,0.6)]"
                 htmlFor="title"
               >
                 Description
@@ -119,7 +119,7 @@ export const Home = () => {
               <textarea
                 value={description}
                 onChange={descriptionHandle}
-                className="rounded-[6px] bg-[#ffffff15] h-[80%] text-white"
+                className="rounded-[6px] bg-[#ffffff15] h-[80%] text-[rgba(255,255,255,0.6)]"
                 id="title"
                 type="text"
               />
@@ -140,7 +140,7 @@ export const Home = () => {
                   className="mb-4 pb-4 border-b border-white/30"
                 >
                   <p className="text-4xl text-[#9fc1ff] mb-3">{data.title}</p>
-                  <p>{data.description}</p>
+                  <p className="text-[rgba(255,255,255,0.6)]">{data.description}</p>
                   <div className="mt-4 flex justify-end">
                     <button
                       onClick={() => deleteHandle(data)}
