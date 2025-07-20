@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Logo from "../assets/Mini-blog.png";
 import {
   getDatabase,
   onValue,
@@ -7,6 +8,7 @@ import {
   remove,
   set,
 } from "firebase/database";
+import myVideo from "../assets/video.mp4";
 export const Home = () => {
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
@@ -66,9 +68,11 @@ export const Home = () => {
       <div className="bg-[#000000cc] w-[99%] h-[98%] rounded-2xl p-5">
         <div className="flex justify-between items-center">
           <div>
-            <p className="px-6 py-2 rounded-xl text-4xl backdrop-blur-md bg-white/10 border border-white/30 text-white shadow-lg">
-              LOGO
-            </p>
+            <img
+              src={Logo}
+              alt="#logo"
+              className="px-6 py-2 rounded-xl text-4xl backdrop-blur-md bg-white/10 border border-white/30 text-white shadow-lg"
+            />
           </div>
           <div className="flex gap-x-[50px]">
             <a
@@ -127,10 +131,20 @@ export const Home = () => {
             </div>
             <button
               onClick={postHandle}
-              className="px-6 py-2 rounded-xl backdrop-blur-md bg-white/10 border border-white/30 text-white shadow-lg hover:bg-white/20 transition mt-7"
+              className="px-6 py-2 rounded-xl backdrop-blur-md bg-white/10 border border-white/30 text-white shadow-lg hover:bg-white/20 transition mt-7 mb-3"
             >
               Post
             </button>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-[80%] rounded-[10px] mx-auto "
+            >
+              <source src={myVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
           <div className="w-[80%] h-[100%] rounded-xl overflow-hidden backdrop-blur-md bg-white/10 border border-white/30 text-white shadow-lg">
             <div className="h-full overflow-y-auto px-5 py-2">
@@ -140,7 +154,9 @@ export const Home = () => {
                   className="mb-4 pb-4 border-b border-white/30"
                 >
                   <p className="text-4xl text-[#9fc1ff] mb-3">{data.title}</p>
-                  <p className="text-[rgba(255,255,255,0.6)]">{data.description}</p>
+                  <p className="text-[rgba(255,255,255,0.6)]">
+                    {data.description}
+                  </p>
                   <div className="mt-4 flex justify-end">
                     <button
                       onClick={() => deleteHandle(data)}
